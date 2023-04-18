@@ -7,13 +7,13 @@ use <cadence.scad>;
 // unit is mm
 
 thickness = 10;
-gap = 20; // "g" to leg
+gap = 7; // "g" to leg
 
 gtop_length = 20;
 gtop_height = 5;
-gback = 26 - 1;
+gback = 26 - 1 + 0.5;
 
-gbottom_length = 35 + 2 * thickness - 3;
+gbottom_length = 35 + 2 * thickness - 3 - 1;
 gtooth_height = 5;
 
 width = 30;
@@ -86,17 +86,16 @@ translate([ gap / 2, 0, 0 ]) rotate([ 0, 0, 0 ])
 
 // leg
 
-translate([ gap, width / 2, - leg_height + thickness / 2 ])
-  rotate([ 90, 0, 0 ])
-    paslice(leg_height, width, slice=90, radius1=leg_height - thickness);
+translate([ 0, 0, 0.3 ]) {
 
-// foot
+  translate([ gap, width / 2, - leg_height + thickness / 2 ])
+    rotate([ 90, 0, 0 ])
+      paslice(leg_height, width, slice=90, radius1=leg_height - thickness);
 
-translate([ gap + leg_height - thickness, 0, - leg_height + 5 ])
-  rotate([ 0, 90, 0 ])
-    paslice(width / 2, thickness, slice=180);
+  // foot
 
-//translate([ - leg_height, 0, - leg_height + 5 ])
-//  rotate([ 0, 90, 0 ])
-//    paslice(width / 2, thickness, slice=180);
+  translate([ gap + leg_height - thickness, 0, - leg_height + 5 ])
+    rotate([ 0, 90, 0 ])
+      paslice(width / 2, thickness, slice=180);
+}
 
