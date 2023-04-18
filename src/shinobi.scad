@@ -28,7 +28,7 @@ translate([ 0, 0, thickness / 2 ]) union() {
 
   // gtop
 
-  translate([ - gtop_length / 2, 0, gback ])
+  translate([ - gtop_length / 2, 0, gback + gtop_height / 2 ])
     rotate([ 0, 0, 0 ])
       cube([ gtop_length, width, gtop_height ], center=true);
 
