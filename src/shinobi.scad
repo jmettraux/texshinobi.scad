@@ -22,15 +22,20 @@ leg_height = 50;
 
 // "g"
 
+//paslice(radius, depth, slice=45, radius1=0)
 //cube([width,depth,height], center)
 
 translate([ 0, 0, thickness / 2 ]) union() {
 
   // gtop
 
-  translate([ - thickness / 2, 0, gback + gtop_height / 2 ])
+  translate([ - thickness * 0.75, 0, gback + gtop_height / 2 ])
     rotate([ 0, 0, 0 ])
-      cube([ thickness, width, gtop_height ], center=true);
+      cube([ thickness / 2, width, gtop_height ], center=true);
+
+  translate([ - thickness / 2, width / 2, gback ])
+    rotate([ 90, 0, 0 ])
+      paslice(gtop_height, width, slice=90);
 
   hull() {
     translate([ - thickness, - width / 4, gback + gtop_height ])
