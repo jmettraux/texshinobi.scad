@@ -54,9 +54,13 @@ translate([ 0, 0, thickness / 2 ]) union() {
 
   // gbottom
 
-  translate([ -gbottom_length / 2, 0, - thickness / 2 ])
+  translate([ -gbottom_length / 2 + thickness / 2, 0, - thickness / 2 ])
     rotate([ 0, 0, 0 ])
-      cube([ gbottom_length, width, thickness ], center=true);
+      cube([ gbottom_length - thickness, width, thickness ], center=true);
+
+  translate([ - gbottom_length + thickness, width / 2, 0 ])
+    rotate([ 90, 180, 0 ])
+      paslice(thickness, width, slice=90);
 
   // gtooth
 
