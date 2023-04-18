@@ -28,9 +28,18 @@ translate([ 0, 0, thickness / 2 ]) union() {
 
   // gtop
 
-  translate([ - gtop_length / 2, 0, gback + gtop_height / 2 ])
+  translate([ - thickness / 2, 0, gback + gtop_height / 2 ])
     rotate([ 0, 0, 0 ])
-      cube([ gtop_length, width, gtop_height ], center=true);
+      cube([ thickness, width, gtop_height ], center=true);
+
+  hull() {
+    translate([ - thickness, - width / 4, gback + gtop_height ])
+      rotate([ 0, 180, 0 ])
+        paslice(width / 4, gtop_height, slice=180);
+    translate([ - thickness, width / 4, gback + gtop_height ])
+      rotate([ 0, 180, 0 ])
+        paslice(width / 4, gtop_height, slice=180);
+  }
 
   // gback
 
