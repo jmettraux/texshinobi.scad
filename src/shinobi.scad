@@ -61,6 +61,14 @@ translate([ 0, 0, thickness / 2 ]) union() {
           cylinder(r=thickness, h=width * 2, center=true);
       };
 
+  translate([ - 1.5 * thickness, 0, thickness / 2 ])
+    rotate([ 0, 0, 180 ])
+      difference() {
+        cube([ thickness, width, thickness ], center=true);
+        translate([ thickness / 2, 0, thickness / 2 ]) rotate([ 90, 0, 0 ])
+          cylinder(r=thickness, h=width * 2, center=true);
+      };
+
   // gbottom
 
   translate([ -gbottom_length / 2 + thickness / 2, 0, - thickness / 2 ])
