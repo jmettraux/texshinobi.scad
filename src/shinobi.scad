@@ -11,9 +11,9 @@ gap = 20; // "g" to leg
 
 gtop_length = 20;
 gtop_height = 5;
-gback = 26;
+gback = 26 - 1;
 
-gbottom_length = 35 + 2 * thickness;
+gbottom_length = 35 + 2 * thickness - 3;
 gtooth_height = 5;
 
 width = 30;
